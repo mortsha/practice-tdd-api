@@ -2,7 +2,7 @@
 <suite name="Running By Class">
     <test name="validate-title">
         <classes>
-            <class name="tek.tdd.tests.FirstTest"></class>
+            <class name="tek.tdd.tests.ValidateTitleTest"></class>
         </classes>
     </test>
 </suite>

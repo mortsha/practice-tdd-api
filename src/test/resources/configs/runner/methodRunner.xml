@@ -2,7 +2,7 @@
 <suite name="running by methods">
     <test name="Running 1 method">
         <classes>
-            <class name="tek.tdd.tests.FirstTest">
+            <class name="tek.tdd.tests.ValidateTitleTest">
                 <methods>
                     <include name="validateTitleOfPage"/>
                 </methods>
