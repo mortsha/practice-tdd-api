@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="running by methods">
+    <test name="Running 1 method">
+        <classes>
+            <class name="tek.tdd.tests.FirstTest">
+                <methods>
+                    <include name="validateTitleOfPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
