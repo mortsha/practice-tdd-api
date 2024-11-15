@@ -12,13 +12,10 @@ import org.testng.annotations.Test;
 import tek.tdd.api.models.EndPoints;
 import tek.tdd.base.ApiTestBase;
 
-import java.io.PushbackReader;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
-public class TokenGeneration extends ApiTestBase {
-    private static final Logger LOGGER = LogManager.getLogger(TokenGeneration.class);
+public class TokenGenerationTest extends ApiTestBase {
+    private static final Logger LOGGER = LogManager.getLogger(TokenGenerationTest.class);
 
 
     @Test
@@ -60,6 +57,7 @@ public class TokenGeneration extends ApiTestBase {
         response.then().statusCode(200);
 
         String actualUsername = response.body().jsonPath().getString("username");
+        Assert.assertEquals(actualUsername, "supervisor", "username should match");
 
         String token = response.body().jsonPath().getString("token");
         Assert.assertNotNull(token);
