@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import tek.tdd.api.models.EndPoints;
+import tek.tdd.api.models.TokenRequest;
 import tek.tdd.base.ApiTestBase;
 
 import java.util.Map;
@@ -97,6 +98,21 @@ public class TokenGenerationTest extends ApiTestBase {
                 {"super", "tek_supervisor", 404, "User super not found"},
                 {"supervisor", "noPass", 400, "Password not match"},
         };
+    }
+
+
+    @Test
+    public void generateTokenUseObjectAsBody() {
+        RequestSpecification request = getDefaultRequest();
+        TokenRequest tokenRequest = new TokenRequest("supervisor", "tek_supervisor");
+
+        request.body(tokenRequest);
+        Response response = request.when().post(EndPoints.TOKEN.getValue());
+
+        response.then().statusCode(200);
+        response.prettyPrint();
+
+
     }
 
 }
