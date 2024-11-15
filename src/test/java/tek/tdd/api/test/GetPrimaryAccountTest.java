@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import tek.tdd.api.models.EndPoint.EndPoints;
 import tek.tdd.api.models.Requests.TokenRequest;
+import tek.tdd.api.models.Response.AccountType;
 import tek.tdd.api.models.Response.TokenResponse;
 import tek.tdd.base.ApiTestBase;
 
@@ -58,6 +59,7 @@ public class GetPrimaryAccountTest extends ApiTestBase {
         TokenResponse token =  response.body().jsonPath().getObject("",TokenResponse.class);
         Assert.assertEquals(token.getUsername(), "supervisor");
         Assert.assertNotNull(token.getToken());
+        Assert.assertEquals(token.getAccountType(), AccountType.CSR);
 
     }
 }
