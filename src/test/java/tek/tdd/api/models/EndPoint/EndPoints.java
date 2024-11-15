@@ -1,8 +1,9 @@
-package tek.tdd.api.models;
+package tek.tdd.api.models.EndPoint;
 
 public enum EndPoints {
     TOKEN("/api/token"),
-    GET_ACCOUNT("/api/accounts/get-account");
+    GET_ACCOUNT("/api/accounts/get-account"),
+    GET_PRIMARY_ACCOUNT("/api/accounts/get-primary-account");
 
     private String value;
 

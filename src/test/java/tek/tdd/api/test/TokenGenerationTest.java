@@ -9,8 +9,8 @@ import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import tek.tdd.api.models.EndPoints;
-import tek.tdd.api.models.TokenRequest;
+import tek.tdd.api.models.EndPoint.EndPoints;
+import tek.tdd.api.models.Requests.TokenRequest;
 import tek.tdd.base.ApiTestBase;
 
 import java.util.Map;
